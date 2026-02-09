@@ -1,0 +1,106 @@
+.tool-stack {
+    padding: 120px 173px 90px;
+    background: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.tool-stack-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: normal;
+    color: #343333;
+    text-align: center;
+    line-height: 43px;
+    margin: 0;
+}
+
+.tools-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1572px;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tool-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 10.106px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.tool-icon-wrapper.with-bg {
+    background: #000;
+}
+
+.tool-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tool-icon-wrapper.with-bg .tool-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.tool-name {
+    font-family: 'Gilroy', 'Inter', sans-serif;
+    font-size: 17.325px;
+    font-weight: 500;
+    color: #000;
+    line-height: normal;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .tool-stack {
+        padding: 80px 60px 60px;
+        gap: 50px;
+    }
+
+    .tools-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tool-stack {
+        padding: 60px 30px 40px;
+        gap: 40px;
+    }
+
+    .tool-stack-title {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .tools-container {
+        gap: 24px;
+    }
+
+    .tool-icon-wrapper {
+        width: 44px;
+        height: 44px;
+    }
+
+    .tool-name {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,94 @@
+.interests {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    /* gap: 4rem; */
+    padding: 80px 100px;
+    background: linear-gradient(180deg, #f8f8ff 0%, #fff 100%);
+    align-items: center;
+    min-height: 550px;
+}
+
+.interests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.interest-item {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: #d4d4d4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.25rem 0;
+}
+
+.interest-item:hover {
+    color: #888;
+}
+
+.interest-item.active {
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.interests-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interest-image {
+    max-width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.interest-image:hover {
+    transform: scale(1.01);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .interests {
+        grid-template-columns: 1fr;
+        padding: 60px 40px;
+        gap: 2rem;
+    }
+
+    .interests-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        order: 2;
+    }
+
+    .interest-item {
+        font-size: 1.1rem;
+    }
+
+    .interests-display {
+        order: 1;
+    }
+
+    .interest-image {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .interests {
+        padding: 40px 20px;
+    }
+
+    .interest-item {
+        font-size: 1rem;
+    }
+
+    .interest-image {
+        max-height: 320px;
+    }
+}

@@ -1,0 +1,245 @@
+.selected-work {
+    padding: 80px 0;
+    min-height: 300vh;
+    /* 100vh per slide to ensure each slide gets dedicated scroll space */
+    position: relative;
+}
+
+.selected-work-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.selected-work-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+}
+
+.selected-work-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+}
+
+.selected-work-subtitle .meh {
+    color: #888;
+}
+
+.selected-work-subtitle .wow {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.slides-container {
+    position: sticky;
+    top: 20vh;
+    /* More space at top for title */
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.slides-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    /* Reduced height more */
+    border-radius: 24px;
+    overflow: visible;
+    /* Allow cards to show above */
+    background: transparent;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Active slide - fully visible at normal position */
+.slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    z-index: 10;
+}
+
+/* Previous slides - shifted up and scaled down slightly, peeking from top */
+.slide.prev {
+    opacity: 1;
+    pointer-events: none;
+}
+
+/* Each previous slide stacks higher */
+.slide.prev[data-offset="1"] {
+    transform: translateY(-60px) scale(0.95);
+    z-index: 9;
+}
+
+.slide.prev[data-offset="2"] {
+    transform: translateY(-100px) scale(0.90);
+    z-index: 8;
+}
+
+/* Next slides - hidden below */
+.slide.next {
+    opacity: 0;
+    transform: translateY(100%);
+    z-index: 1;
+}
+
+.slide-media-wrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+}
+
+.slide-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.slide-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.slide-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0;
+    flex: 1;
+    padding-right: 16px;
+}
+
+.slide-description {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0 0 0;
+    display: none;
+}
+
+.slide-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.slide-arrow:hover {
+    background: #333;
+    transform: scale(1.05);
+}
+
+.slide-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #1a1a1a;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: #999;
+}
+
+/* First slide specific - QMS Dashboard with gradient overlay */
+.slide:first-child .slide-media-wrapper {
+    background: linear-gradient(180deg, #4A9FFF 0%, #1E7FE0 100%);
+}
+
+.slide:first-child .slide-info {
+    background: linear-gradient(135deg, rgba(240, 248, 255, 0.95), rgba(230, 244, 255, 0.95));
+}
+
+/* Second slide - CRM with teal gradient */
+.slide:nth-child(2) .slide-media-wrapper {
+    background: linear-gradient(135deg, #0D9488 0%, #134E4A 100%);
+}
+
+/* Third slide - Predecto with purple gradient */
+.slide:nth-child(3) .slide-media-wrapper {
+    background: linear-gradient(135deg, #6366F1 0%, #4338CA 100%);
+}
+
+@media (max-width: 768px) {
+    .selected-work {
+        padding: 60px 0;
+        min-height: 180vh;
+    }
+
+    .selected-work-title {
+        font-size: 36px;
+    }
+
+    .selected-work-subtitle {
+        font-size: 16px;
+    }
+
+    .slides-container {
+        top: 5vh;
+    }
+
+    .slides-frame {
+        aspect-ratio: 4 / 3;
+        border-radius: 16px;
+    }
+
+    .slide-info {
+        padding: 16px;
+    }
+
+    .slide-title {
+        font-size: 14px;
+    }
+
+    .slide-arrow {
+        width: 36px;
+        height: 36px;
+    }
+}
