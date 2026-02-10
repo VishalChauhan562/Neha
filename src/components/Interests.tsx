@@ -14,7 +14,7 @@ function Interests() {
     const [activeIndex, setActiveIndex] = useState(0)
 
     return (
-        <section className="interests">
+        <section id="interests" className="interests">
             <div className="interests-list">
                 {interests.map((interest, index) => (
                     <span

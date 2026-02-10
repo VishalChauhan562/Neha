@@ -67,7 +67,7 @@ function SelectedWork() {
     }, [])
 
     return (
-        <section className="selected-work" ref={sectionRef}>
+        <section id="work" className="selected-work" ref={sectionRef}>
             <div className="selected-work-header">
                 <h2 className="selected-work-title">Selected Work</h2>
                 <p className="selected-work-subtitle">

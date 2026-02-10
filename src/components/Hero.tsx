@@ -2,7 +2,7 @@ import './Hero.css'
 
 function Hero() {
     return (
-        <section className="hero">
+        <section id="home" className="hero">
             <div className="hero-decorations">
                 {/* LEFT SIDE - Top to Bottom: Girl, Chai, Dog */}
                 <div className="decoration decoration-girl card-style">
